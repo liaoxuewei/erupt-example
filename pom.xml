@@ -116,7 +116,7 @@
         <repository>
             <id>nexus-aliyun</id>
             <name>nexus-aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+            <url>http://172.20.32.74:8081/repository/maven-public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
