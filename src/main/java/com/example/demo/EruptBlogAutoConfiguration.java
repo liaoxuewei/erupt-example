@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import xyz.erupt.core.annotation.EruptScan;
-import xyz.erupt.core.constant.MenuTypeEnum;
 import xyz.erupt.core.module.EruptModule;
 import xyz.erupt.core.module.EruptModuleInvoke;
 import xyz.erupt.core.module.MetaMenu;
@@ -24,21 +23,21 @@ import java.util.List;
 @EntityScan
 @EruptScan
 @EnableConfigurationProperties
-public class EruptDemoAutoConfiguration implements EruptModule {
+public class EruptBlogAutoConfiguration implements EruptModule {
 
     static {
-        EruptModuleInvoke.addEruptModule(EruptDemoAutoConfiguration.class);
+        EruptModuleInvoke.addEruptModule(EruptBlogAutoConfiguration.class);
     }
 
     @Override
     public ModuleInfo info() {
-        return ModuleInfo.builder().name("erupt-Demo").build();
+        return ModuleInfo.builder().name("erupt-blog").build();
     }
 
     @Override
     public List<MetaMenu> initMenus() {
         List<MetaMenu> menus = new ArrayList<>();
-        MetaMenu root = MetaMenu.createRootMenu("$Demo", "Demo管理", "fa fa-cogs", 1);
+        MetaMenu root = MetaMenu.createRootMenu("$blog", "博客管理", "fa fa-cogs", 1);
         menus.add(root);
         menus.add(MetaMenu.createEruptClassMenu(BlogCategory.class, root, 0));
         menus.add(MetaMenu.createEruptClassMenu(BlogTag.class, root, 10));
